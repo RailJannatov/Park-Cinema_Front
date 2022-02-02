@@ -1,5 +1,6 @@
 import React from "react";
 import { Row, Col, Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 import "./index.scss";
 
@@ -18,7 +19,7 @@ const Navbar = () => {
               <ul className="navbar-nav">
                 <li className="nav-item">
                   <a href="/" className="nav-link">
-                    Kinoteatrlar
+                    <Link to="/Kino">Kinoteatrlar</Link>
                   </a>
                 </li>
                 <li className="nav-item">

@@ -1,4 +1,4 @@
-@import "../../../../scss/index.scss";
+@import "../../../scss/index.scss";
 nav {
   display: flex;
   align-items: center;
@@ -12,7 +12,7 @@ nav {
   width: 150px;
   .nav-logo-link {
     display: inline-block;
-    background: url(../../../../../public/images/logo/park-cinema-logo.png)
+    background: url(../../../../public/images/logo/park-cinema-logo.png)
       no-repeat;
     width: 178px;
     height: 192px;
@@ -29,7 +29,7 @@ nav {
         font-size: 15px;
         line-height: 36px;
         color: $secondary-color;
-        background-image: url(../../../../../public/images/slash.png);
+        background-image: url(../../../../public/images/slash.png);
         background-position: right center;
         background-repeat: no-repeat;
         font-weight: normal;
@@ -89,10 +89,10 @@ nav {
       margin: 8px;
     }
     .ios-icon {
-      background-image: url(../../../../../public/images/ios.png);
+      background-image: url(../../../../public/images/ios.png);
     }
     .android-icon {
-      background-image: url(../../../../../public/images/android.png);
+      background-image: url(../../../../public/images/android.png);
     }
   }
 }
