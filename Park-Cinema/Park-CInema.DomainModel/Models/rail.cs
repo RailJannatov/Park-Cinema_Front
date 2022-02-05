@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Park_CInema.DomainModel.Models
 {
-    class Test
+    class rail
     {
         public int Id { get; set; }
     }
