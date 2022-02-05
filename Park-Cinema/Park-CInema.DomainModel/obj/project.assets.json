@@ -8,19 +8,19 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\ASUS\\.nuget\\packages\\": {}
+    "C:\\Users\\Rail\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ASUS\\Desktop\\Test\\Park-Cinema_Front\\Park-Cinema\\Park-CInema.DomainModel\\Park-CInema.DomainModel.csproj",
+      "projectUniqueName": "C:\\Users\\Rail\\Desktop\\Park-Cinema_Front\\Park-Cinema\\Park-CInema.DomainModel\\Park-CInema.DomainModel.csproj",
       "projectName": "Park-CInema.DomainModel",
-      "projectPath": "C:\\Users\\ASUS\\Desktop\\Test\\Park-Cinema_Front\\Park-Cinema\\Park-CInema.DomainModel\\Park-CInema.DomainModel.csproj",
-      "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ASUS\\Desktop\\Test\\Park-Cinema_Front\\Park-Cinema\\Park-CInema.DomainModel\\obj\\",
+      "projectPath": "C:\\Users\\Rail\\Desktop\\Park-Cinema_Front\\Park-Cinema\\Park-CInema.DomainModel\\Park-CInema.DomainModel.csproj",
+      "packagesPath": "C:\\Users\\Rail\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Rail\\Desktop\\Park-Cinema_Front\\Park-Cinema\\Park-CInema.DomainModel\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Rail\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -60,7 +60,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
       }
     }
   }
