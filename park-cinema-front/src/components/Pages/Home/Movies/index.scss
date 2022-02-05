@@ -1,26 +1,118 @@
 @import "../../../../scss/index.scss";
+.main-buttons {
+  margin-bottom: $base * 6 +1;
+
+  .filter-button {
+    line-height: 42px;
+    border: $second-border-color solid 2px;
+    display: inline-block;
+    color: $text-color;
+    font-size: 26px;
+    font-weight: normal;
+    border-radius: 15px;
+    text-align: center;
+    margin-right: 5px;
+    cursor: pointer;
+    margin-bottom: -5px;
+    height: 44px;
+    width: 31%;
+    .activeMovie {
+      border: $error-color solid 2px;
+      color: $secondary-color;
+    }
+  }
+}
+
 .main-movies {
-  background-color: gray;
+  background-color: $background-color;
+  padding: 40px;
+  .filtering-content {
+    display: flex;
+    justify-content: center;
+    .filter-hall {
+      min-width: 100px;
+      padding: 4px 25px;
+      height: auto;
+      line-height: normal;
+      border: 2px solid #394349;
+      border-radius: 5px;
+      background-color: #272d31;
+      font-size: 16px;
+      margin: 8px;
+      width: auto;
+      color: $secondary-color;
+      text-align: center;
+    }
+    .laser-icon {
+      background-image: url(../../../../../public/images/Movies/laser-w.svg);
+      background-size: 70%;
+      background-position: 50% 45%;
+      color: transparent;
+      background-repeat: no-repeat;
+    }
+    .imax-icon {
+      background-image: url(../../../../../public/images/Movies/IMAX.svg);
+      background-size: auto 12px;
+      background-position: 50% 50%;
+      color: transparent;
+      background-repeat: no-repeat;
+    }
+    .dolby-icon {
+      background-image: url(../../../../../public/images/Movies/dolbyatmos-type.svg);
+      background-size: 44%;
+      background-position: 50% 45%;
+      color: transparent;
+      background-repeat: no-repeat;
+    }
+  }
+
+  .movies-options {
+    display: flex;
+    justify-content: center;
+    .select-cinema {
+      border: 2px solid #394349;
+      border-radius: 10px;
+      height: 45px;
+      width: 415px;
+      background: #272d31;
+      color: $secondary-color;
+      background-image: url(../../../../../public/images/arrovBottom.svg);
+      background-repeat: no-repeat;
+      background-position: right 0.75rem center;
+      border: 2px solid #394349;
+      padding: 5px 20px;
+    }
+  }
+  .filter-language-movies {
+    display: flex;
+    justify-content: center;
+    margin-bottom: $base * 5;
+    .filter-language {
+      min-width: 100px;
+      padding: 4px 25px;
+      height: auto;
+      line-height: normal;
+      border: 2px solid #394349;
+      border-radius: 5px;
+      background-color: #272d31;
+      font-size: 16px;
+      margin: 8px;
+      width: auto;
+      color: $secondary-color;
+    }
+  }
 }
 .movies-button {
   display: flex;
 }
-.filter-button {
-  line-height: 42px;
-  border: $second-border-color solid 2px;
-  display: inline-block;
-  color: $text-color;
-  font-size: 26px;
-  font-weight: normal;
-  border-radius: 15px;
-  text-align: center;
-  margin-right: 5px;
-  cursor: pointer;
-  margin-bottom: -5px;
-  height: 44px;
-  width: 31%;
-}
-.activeMovie {
-  border: $error-color solid 2px;
-  color: $secondary-color;
+
+.main-movie-title {
+  height: "41px";
+  line-height: "41px";
+  width: "100%";
+  padding-right: "40px";
+  text-overflow: "ellipsis";
+  overflow: " hidden";
+  font-size: "20px";
+  color: " #fff";
 }
