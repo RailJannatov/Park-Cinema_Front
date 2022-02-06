@@ -10,8 +10,3 @@ const Home = () => {
   );
 };
 export default Home;
-
-// destructuring
-// rest spread operator
-// arro decalration fucntion ferqler
-// array methods
