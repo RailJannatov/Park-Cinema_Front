@@ -17,7 +17,7 @@ const Navbar = () => {
           <Col md={8} className="main-list">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <Link to="/Kino" className="nav-link">
+                <Link to="/Cinemas" className="nav-link">
                   Kinoteatrlar
                 </Link>
               </li>

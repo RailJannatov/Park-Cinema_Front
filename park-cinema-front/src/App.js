@@ -1,5 +1,4 @@
 import Home from "./components/Pages/Home/Home";
-import Movie from "./components/common/Movie";
 import Navbar from "./components/layout/Navbar/Navbar";
 import {
   BrowserRouter,
@@ -8,6 +7,7 @@ import {
   Link,
   useRouteMatch,
 } from "react-router-dom";
+import Cinemas from "./components/Pages/Home/Cinemas/Cinemas";
 
 const App = () => {
   return (
@@ -15,7 +15,7 @@ const App = () => {
       <Navbar />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/Kino" component={Movie} />
+        <Route path="/Cinemas" component={Cinemas} />
       </Switch>
     </>
   );
