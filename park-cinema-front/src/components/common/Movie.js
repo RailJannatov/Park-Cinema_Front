@@ -7,31 +7,31 @@ import { propTypes } from "react-bootstrap/esm/Image";
 const Movie = ({ movie }) => {
   return (
     <>
-      <Row>
+      {/* <Row>
         <Col md={6}>
-          <div className="movie-image" key={movie.id}>
-            <img src={movie.Image} alt="movie" className="img-fluid" />
+          <div className="movie-image" key={movie?.id}>
+            <img src={movie?.Image} alt="movie" className="img-fluid" />
             <button className="movie-ticket-buy">Bilet al</button>
           </div>
         </Col>
         <Col md={6}>
-          <div className="movie-description" key={movie.id}>
+          <div className="movie-description" key={movie?.id}>
             <a className="movie-title" href="/">
-              {movie.Name}
+              {movie?.Name}
             </a>
             <div className="movie-date">
-              <span>{movie.DateTime}</span>
+              <span>{movie?.DateTime}</span>
             </div>
             <div className="movie-type">
               <span>2D</span>
             </div>
             <div className="movie-language">
-              <span>{movie.MovieLanguage.toUpperCase()}</span>
+              <span>{movie?.MovieLanguage.toUpperCase()}</span>
             </div>
-            <div className="movie-claimer-age">{movie.ClaimerAge}+</div>
+            <div className="movie-claimer-age">{movie?.ClaimerAge}+</div>
           </div>
         </Col>
-      </Row>
+      </Row> */}
     </>
   );
 };
