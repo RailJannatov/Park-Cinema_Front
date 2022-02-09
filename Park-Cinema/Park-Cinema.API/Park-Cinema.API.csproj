@@ -15,8 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Park-CInema.DomainModel\Park-CInema.DomainModel.csproj" />
-    <ProjectReference Include="..\Park-Cinema.Repository\Park-Cinema.Repository.csproj" />
+    <Folder Include="Controllers\" />
   </ItemGroup>
 
 </Project>

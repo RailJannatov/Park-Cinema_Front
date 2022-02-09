@@ -9,11 +9,7 @@ import {
   Link,
   useRouteMatch,
 } from "react-router-dom";
-<<<<<<< HEAD
-import Advertisement from "./components/layout/Advertisement/Advertisment";
-=======
 import Cinemas from "./components/Pages/Home/Cinemas/Cinemas";
->>>>>>> fd2b97e7662a5c447b4a4756a33fa89928bfaeb2
 
 const App = () => {
   return (

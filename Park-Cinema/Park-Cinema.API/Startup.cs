@@ -8,7 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using Park_Cinema.Repository.Context;
+//using Park_Cinema.Repository.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,14 +28,14 @@ namespace Park_Cinema.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            var connectionString = Configuration.GetConnectionString("DefaultConnection");
-            services.AddDbContext<AppDbContext>(options =>
-            {
-                options.UseSqlServer(connectionString, builder =>
-                {
-                    builder.MigrationsAssembly("Park-Cinema.Repository"); 
-                });
-            });
+            //var connectionString = Configuration.GetConnectionString("DefaultConnection");
+            //services.AddDbContext<AppDbContext>(options =>
+            //{
+            //    options.UseSqlServer(connectionString, builder =>
+            //    {
+            //        builder.MigrationsAssembly("Park-Cinema.Repository");
+            //    });
+            //});
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

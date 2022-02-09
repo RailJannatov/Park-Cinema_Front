@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "WCg0hyPUFQnkcvzgzTstaBlf6jDJO+lUDqpaCR/iSW75CX2PMGtXUdMzKs+YD7otkioMtFwZv/74kyb070AqqA==",
+  "dgSpecHash": "OhabggxfO1u2AwQ9UL/Yma6OWb8e1ZphR5B2fi5QyQhbzLvZ5xl//y7IGKf7RVUXr+HUDxguL9MMde3ft1CcwA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Rail\\Desktop\\Park-Cinema_Front\\Park-Cinema\\Park-CInema.DomainModel\\Park-CInema.DomainModel.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Rail\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.13\\microsoft.aspnetcore.http.features.5.0.13.nupkg.sha512",
+    "C:\\Users\\Rail\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
+    "C:\\Users\\Rail\\.nuget\\packages\\system.io.pipelines\\5.0.1\\system.io.pipelines.5.0.1.nupkg.sha512"
+  ],
   "logs": []
 }
