@@ -16,16 +16,21 @@
     margin-bottom: -5px;
     height: 44px;
     width: 31%;
-    .activeMovie {
-      border: $error-color solid 2px;
+    &:hover {
       color: $secondary-color;
+      border-color: $secondary-color;
     }
+  }
+  .active-tab {
+    border: $error-color solid 2px;
+    color: $secondary-color;
   }
 }
 
 .main-movies {
   background-color: $background-color;
   padding: 40px;
+
   .filtering-content {
     display: flex;
     justify-content: center;
@@ -42,6 +47,13 @@
       width: auto;
       color: $secondary-color;
       text-align: center;
+      cursor: pointer;
+      &:hover {
+        background-color: $border-color;
+      }
+    }
+    .active-hall {
+      background-color: $border-color;
     }
     .laser-icon {
       background-image: url(../../../../../public/images/Movies/laser-w.svg);
@@ -70,7 +82,7 @@
     display: flex;
     justify-content: center;
     .select-cinema {
-      border: 2px solid #394349;
+      border: 2px solid $border-color;
       border-radius: 10px;
       height: 45px;
       width: 415px;
@@ -79,7 +91,7 @@
       background-image: url(../../../../../public/images/arrovBottom.svg);
       background-repeat: no-repeat;
       background-position: right 0.75rem center;
-      border: 2px solid #394349;
+      border: 2px solid $border-color;
       padding: 5px 20px;
     }
   }
@@ -99,13 +111,33 @@
       margin: 8px;
       width: auto;
       color: $secondary-color;
+      cursor: pointer;
+      &:hover {
+        background-color: $border-color;
+      }
+    }
+    .active-language {
+      background-color: $border-color;
     }
   }
 }
 .movies-button {
   display: flex;
 }
-
+.video-trailer {
+  margin-top: 50px;
+}
+.movie-title {
+  width: 674px;
+  h2 {
+    font-size: 60px;
+    color: white;
+    line-height: 59.22px;
+    margin: 0;
+    position: relative;
+    top: -16px;
+  }
+}
 .main-movie-title {
   height: "41px";
   line-height: "41px";
@@ -115,4 +147,134 @@
   overflow: " hidden";
   font-size: "20px";
   color: " #fff";
+}
+.movie-sessions {
+  height: 150px;
+  width: calc(100% / 2);
+  background-color: gray;
+  margin-left: calc(44% / 2);
+  margin: 0 -25px;
+  background-color: #2b3236;
+  padding: 0 25px 50px;
+}
+.order-ticket {
+  background-image: url(../../../../../public/images/order-ticket.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 288px;
+  height: 120px;
+  margin: auto;
+  padding: 25px;
+  padding-top: 23px;
+  h3 {
+    color: red;
+    font-size: 18px;
+    margin: 0;
+    margin-bottom: 2px;
+  }
+  span {
+    color: #999999;
+  }
+  h4 {
+    margin: 0;
+    font-size: 18px;
+    color: $secondary-color;
+  }
+}
+.movie-description {
+  font-size: 13px;
+  line-height: 17px;
+  color: $secondary-color;
+  padding-right: 80px;
+}
+.social-logos {
+  display: flex;
+  color: red;
+  list-style-type: none;
+  .facebook-logo {
+    a {
+      background-image: url(../../../../../public/images/logo/facebook.png);
+      width: 10px;
+      height: 17px;
+      background-position: 0 -30px;
+      transition: all 0.3s ease;
+      opacity: 0.8;
+      display: inline-block;
+      background-repeat: no-repeat;
+      margin-right: 30px;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+  .twitter-logo {
+    a {
+      background-image: url(../../../../../public/images/logo/twitter.png);
+      width: 17px;
+      height: 17px;
+      background-position: 0 -30px;
+      transition: all 0.3s ease;
+      opacity: 0.8;
+      display: inline-block;
+      background-repeat: no-repeat;
+      margin-right: 30px;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+  .youtube-logo {
+    a {
+      background-image: url(../../../../../public/images/logo/youtube.png);
+      width: 41px;
+      height: 27px;
+      background-position: 0px -21px;
+      transition: all 0.3s ease;
+      opacity: 0.8;
+      display: inline-block;
+      background-repeat: no-repeat;
+      margin-right: 30px;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+.movie-detail-image {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.detail-title {
+  display: block;
+  color: #999999;
+  font-size: 13px;
+  margin-top: 30px;
+  line-height: 21px;
+  margin-bottom: 0;
+  padding-top: 0px;
+}
+.movie-detail {
+  color: #fff;
+  list-style: none;
+  font-size: 14px;
+  width: 205px;
+  li {
+    list-style: none;
+  }
+}
+.more-movies {
+  display: flex;
+  margin-top: 130px;
+  .movie-item {
+    margin-right: 51px;
+    width: 140px;
+    text-align: center;
+    .movie-image {
+      margin-bottom: 19px;
+    }
+    span {
+      font-size: 14px;
+      color: $secondary-color;
+    }
+  }
 }

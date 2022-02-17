@@ -8,30 +8,123 @@ import Advertisement from "../../../layout/Advertisement/Advertisment";
 
 const Movies = () => {
   const [movies, setMovies] = React.useState([]);
+  const [toggleTab, setToggleTab] = React.useState(1);
+  const [selectHall, setSelectHall] = React.useState(1);
+  const [selectLanguage, setSelectLanguage] = React.useState(0);
+  console.log(movies);
 
   React.useEffect(() => {
-    let url = "https://localhost:44300/api";
-    axios.get(`${url}/Movies`).then((res) => setMovies(res.data));
+    axios
+      .get("https://localhost:44300/api/Movies/GetMovies")
+      .then((res) => setMovies(res.data));
   }, []);
+
   console.log(movies);
   return (
     <Container>
       <Row>
         <Col md={9}>
           <div className="main-buttons">
-            <div className="filter-button activeMovie">Bu gün</div>
-            <div className="filter-button">Tezliklə</div>
-            <div className="filter-button">Cədvəl</div>
+            <div
+              className={
+                toggleTab === 1 ? "filter-button active-tab" : "filter-button"
+              }
+              onClick={() => {
+                setToggleTab(1);
+              }}
+            >
+              Bu gün
+            </div>
+            <div
+              className={
+                toggleTab === 2 ? "filter-button active-tab" : "filter-button"
+              }
+              onClick={() => {
+                setToggleTab(2);
+              }}
+            >
+              Tezliklə
+            </div>
+            <div
+              className={
+                toggleTab === 3 ? "filter-button active-tab" : "filter-button"
+              }
+              onClick={() => {
+                setToggleTab(3);
+              }}
+            >
+              Cədvəl
+            </div>
           </div>
 
           <div className="main-movies">
             <div className="filtering-content">
-              <div className="filter-hall"> Hamısı </div>
-              <div className="filter-hall imax-icon"> İMAX </div>
-              <div className="filter-hall laser-icon"> LaseR </div>
-              <div className="filter-hall dolby-icon"> Dolby </div>
-              <div className="filter-hall "> 3D </div>
-              <div className="filter-hall"> 2D </div>
+              <div
+                className={
+                  selectHall === 1 ? "filter-hall active-hall" : "filter-hall"
+                }
+                onClick={() => {
+                  setSelectHall(1);
+                }}
+              >
+                Hamısı
+              </div>
+              <div
+                className={
+                  selectHall === 2
+                    ? "filter-hall imax-icon active-hall"
+                    : "filter-hall imax-icon"
+                }
+                onClick={() => {
+                  setSelectHall(2);
+                }}
+              >
+                İMAX
+              </div>
+              <div
+                className={
+                  selectHall === 3
+                    ? "filter-hall laser-icon active-hall"
+                    : "filter-hall laser-icon "
+                }
+                onClick={() => {
+                  setSelectHall(3);
+                }}
+              >
+                LaseR
+              </div>
+              <div
+                className={
+                  selectHall === 4
+                    ? "filter-hall dolby-icon  active-hall"
+                    : "filter-hall dolby-icon"
+                }
+                onClick={() => {
+                  setSelectHall(4);
+                }}
+              >
+                Dolby
+              </div>
+              <div
+                className={
+                  selectHall === 5 ? "filter-hall active-hall" : "filter-hall"
+                }
+                onClick={() => {
+                  setSelectHall(5);
+                }}
+              >
+                3D
+              </div>
+              <div
+                className={
+                  selectHall === 6 ? "filter-hall active-hall" : "filter-hall"
+                }
+                onClick={() => {
+                  setSelectHall(6);
+                }}
+              >
+                2D
+              </div>
             </div>
             <div className="movies-options">
               <Form.Select
@@ -47,15 +140,37 @@ const Movies = () => {
               </Form.Select>
             </div>
             <div className="filter-language-movies">
-              <div className="filter-language"> Ingilis dilində filmlər </div>
-              <div className="filter-language "> Türk dilində filmlər </div>
+              <div
+                className={
+                  selectLanguage === 1
+                    ? "filter-language active-language"
+                    : "filter-language "
+                }
+                onClick={() => {
+                  setSelectLanguage(1);
+                }}
+              >
+                Ingilis dilində filmlər
+              </div>
+              <div
+                className={
+                  selectLanguage === 2
+                    ? "filter-language active-language"
+                    : "filter-language"
+                }
+                onClick={() => {
+                  setSelectLanguage(2);
+                }}
+              >
+                Türk dilində filmlər
+              </div>
             </div>
             <Row>
-              {/* {movies?.map((movie) => (
-              <Col md={4} className="movie">
-                <Movie key={movie.id} movie={movie} />
-              </Col>
-            ))} */}
+              {movies.map((movie) => (
+                <Col md={4} className="movie" key={movie.id}>
+                  <Movie key={movie.id} movie={movie} />
+                </Col>
+              ))}
             </Row>
           </div>
         </Col>

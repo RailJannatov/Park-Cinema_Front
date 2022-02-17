@@ -1,14 +1,8 @@
 import Home from "./components/Pages/Home/Home";
 import Navbar from "./components/layout/Navbar/Navbar";
 import Footer from "./components/layout/Footer/Footer";
-import { Col, Row } from "react-bootstrap";
-import {
-  BrowserRouter,
-  Switch,
-  Route,
-  Link,
-  useRouteMatch,
-} from "react-router-dom";
+import MovieDetail from "./components/Pages/Home/Movies/MovieDetail";
+import { Switch, Route } from "react-router-dom";
 import Cinemas from "./components/Pages/Home/Cinemas/Cinemas";
 
 const App = () => {
@@ -18,6 +12,7 @@ const App = () => {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/Cinemas" component={Cinemas} />
+        <Route path="/movie/:id" component={MovieDetail} />
       </Switch>
       <Footer />
     </>
