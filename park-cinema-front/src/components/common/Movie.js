@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 
 const Movie = ({ movie }) => {
   const date = movie.startTime;
-
   console.log(movie);
+
   return (
     <>
       <Row>

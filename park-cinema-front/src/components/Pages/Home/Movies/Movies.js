@@ -11,15 +11,11 @@ const Movies = () => {
   const [toggleTab, setToggleTab] = React.useState(1);
   const [selectHall, setSelectHall] = React.useState(1);
   const [selectLanguage, setSelectLanguage] = React.useState(0);
-  console.log(movies);
-
   React.useEffect(() => {
     axios
       .get("https://localhost:44300/api/Movies/GetMovies")
       .then((res) => setMovies(res.data));
   }, []);
-
-  console.log(movies);
   return (
     <Container>
       <Row>
