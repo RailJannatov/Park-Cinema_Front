@@ -121,6 +121,19 @@
     }
   }
 }
+.campaign-offer {
+  display: flex;
+  margin-top: 45px !important ;
+  font-size: 16px;
+  color: $secondary-color;
+  text-align: center;
+  .super-day {
+    margin-right: 60px;
+  }
+  p {
+    padding: 20px;
+  }
+}
 .top-desc {
   margin-top: 80px;
 }
@@ -158,6 +171,10 @@
   margin: 0 -25px;
   background-color: #2b3236;
   padding: 0 25px 50px;
+  &.session-branch {
+    margin-bottom: 30px;
+    margin-top: 20px;
+  }
   .movie-session-title {
     display: flex;
   }
@@ -347,5 +364,16 @@
       font-size: 14px;
       color: $secondary-color;
     }
+  }
+}
+
+.main-order-ticket {
+  margin: 0;
+  margin-bottom: 0;
+  margin-bottom: 35px;
+}
+.home-logos {
+  .social-logos {
+    margin: 0;
   }
 }

@@ -1,10 +1,11 @@
 import axios from "axios";
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import CinemaSlider from "../../Cinemas/CinemaSlider";
+import CinemaSlider from "../../Branches/CinemaSlider";
 import moment from "moment";
 import { useParams } from "react-router-dom";
 import { Form } from "react-bootstrap";
+import "./index.scss";
 
 const MovieDetail = (props) => {
   const [movieDetail, setMovieDetail] = React.useState({});
@@ -31,24 +32,27 @@ const MovieDetail = (props) => {
   const todayDate = moment(new Date()).format("MMMM DD");
   const indexOfTodayDate = timeFilter.indexOf(todayDate);
   timeFilter.splice(0, indexOfTodayDate);
-
   React.useEffect(() => {
     window.scrollTo(0, 0);
-    axios
-      .get(`https://localhost:44300/api/Movies/GetMovieDetail/${id}`)
-      .then((res) => setMovieDetail(res.data));
-    axios
-      .get("https://localhost:44300/api/Movies/GetMovies")
-      .then((res) => setMoreMovies(res.data));
-    axios
-      .get(`https://localhost:44300/api/Sessions/GetSessionByMovieId/${id}`)
-      .then((res) => setSession(res.data));
-    axios
-      .get(`https://localhost:44300/api/Sessions/GetSessionByMovieId/${id}`)
-      .then((res) => console.log(res.data));
-    axios
-      .get(`https://localhost:44300/api/Sessions/GetSessionByMovieId/${id}`)
-      .then((res) => setTimeFilter(res.data[0].times));
+    async function fetchMyAPI() {
+      await axios
+        .get(`https://localhost:44300/api/Movies/GetMovieDetail/${id}`)
+        .then((res) => setMovieDetail(res.data));
+      await axios
+        .get("https://localhost:44300/api/Movies/GetMovies")
+        .then((res) => setMoreMovies(res.data.splice(0, 5)));
+
+      await axios
+        .get(`https://localhost:44300/api/Sessions/GetSessionByMovieId/${id}`)
+        .then((res) => setSession(res.data));
+      await axios
+        .get(`https://localhost:44300/api/Sessions/GetSessionByMovieId/${id}`)
+        .then((res) => setTimeFilter(res.data[0].times));
+      await axios
+        .get(`https://localhost:44300/api/Sessions/GetSessionByMovieId/${id}`)
+        .then((res) => console.log(res.data));
+    }
+    fetchMyAPI();
   }, [id]);
 
   return (
@@ -115,6 +119,7 @@ const MovieDetail = (props) => {
             <p className="movie-description top-desc">
               {movieDetail?.description}
             </p>
+
             <div className="video-trailer">
               <iframe
                 src={movieDetail?.videoUrl}
@@ -125,6 +130,7 @@ const MovieDetail = (props) => {
                 title="YouTube video player"
               ></iframe>
             </div>
+
             <div className="more-movies">
               {moreMovies.map((movie) => (
                 <div className="movie-item">
@@ -170,7 +176,7 @@ const MovieDetail = (props) => {
                 </a>
               </li>
             </ul>
-            <div className="order-ticket">
+            <div className="order-ticket main-order-ticket">
               <h3>Biletlərin sifarişi</h3>
               <h4>
                 <span>+994 12</span> 598 74 14

@@ -31,7 +31,11 @@
   color: $secondary-color;
   display: block;
   &:hover {
-    background-color: red;
+    background-color: $error-color;
+  }
+  .movie-link-detail {
+    text-decoration: none;
+    color: $secondary-color;
   }
 }
 .movie-language {
