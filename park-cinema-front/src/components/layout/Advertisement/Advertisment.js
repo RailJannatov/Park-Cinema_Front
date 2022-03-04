@@ -5,7 +5,6 @@ import adverstimentOfferImage from "../../../images/aside-image.png";
 
 const Advertisement = (props) => {
   const { style } = props;
-  console.log(style);
   return (
     <>
       <div className={style ? `img-holder ${style}` : "img-holder"}>

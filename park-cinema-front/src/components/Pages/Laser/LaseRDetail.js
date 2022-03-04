@@ -1,45 +1,43 @@
+import axios from "axios";
 import React from "react";
 import laserImage from "../../../images/laser-az.png";
 
-const LaseRDetail = () => {
+const LaseRDetail = ({ laserInfo }) => {
+  const [projectBenefits, setProjectBenefits] = React.useState();
+  var removed = projectBenefits?.splice(-1);
+
+  const firstSentence = laserInfo?.description.split(".")[0];
+  const restFirst = laserInfo?.description.split(".")[1];
+  const secondSentence = laserInfo?.description.split(".")[2];
+  const restSecond = laserInfo?.description.split(".")[3];
+  const thirdSentence = laserInfo?.description.split(".")[4];
+  const restThird = laserInfo?.description.split(".")[5];
+  const fourthSentence = laserInfo?.description.split(".")[6];
+  const restFourth = laserInfo?.description.split(".")[7];
+
+  const list = laserInfo?.projectBenefits.split(",").pop();
+
+  React.useEffect(() => {
+    axios
+      .get("https://localhost:44300/api/Laser/GetLaserInfo")
+      .then((res) => setProjectBenefits(res.data.projectBenefits.split(",")));
+  }, []);
+
   return (
     <>
       <div className="laser-image">
         <img src={laserImage} alt="laser" />
       </div>
       <div className="laser-description">
-        <p>
-          2017-ilin iyul ayında Park Cinema kinoteatrlar şəbəkəsi Azərbaycanda
-          ilk dəfə yeni nəsil lazer proyektorlu zal təqdim etdi. Dünyaca məşhur
-          bu innovativ texnologiya kino sevərləri Park Bulvar ticarət və əyləncə
-          mərkəzində gözləyir.
-        </p>
-        <p>
-          Lazer zalı 199 yer üçün nəzərdə tutulub və Azərbaycanda ilk, və hələki
-          tək, lazer zalı hesab olunur. Sözügedən zalda yerləşdirilmiş yeni
-          nəsil proyektor film izləyiciləri üçün daha aydın və rəngli görüntü
-          yaradır.
-        </p>
-        <p>
-          Adi proyektordan fərqli olaraq, yeni nəsil lazerli proyektor dolğunluq
-          yaradır və kontrastlığı artırır, beləcə izləyiciyə böyük ekranda
-          maksimal dərəcədə daha aydın görüntü izləməyə imkan yaradır.
-          Proyektorun kontrastlığı artırması filmin görüntüsünə qərq olmağa
-          imkan yaradır, eyni zamanda çox parlaq və çox tünd rəngləri və hamar
-          rəng keçidlərini əks etdirir.
-        </p>
-        <p>
-          Həmçinin onu da qeyd etmək lazımdır ki, lazerli proyektorla film
-          izləryən zaman görüntünün işıldaması halı baş vermir. İşığın ekranda
-          bərabar şəkildə paylanılması nəticəsində, insan gözü əks olunmuş
-          görüntünü bütün bir vəhdət olaraq qavrayır.
-        </p>
+        <p>{`${firstSentence}.${restFirst}`}</p>
+        <p>{`${secondSentence}.${restSecond}`}</p>
+        <p>{`${thirdSentence}.${restThird}`}</p>
+        <p>{`${fourthSentence}.${restFourth}`}</p>
         <p>Proyektorun əsas üstünlükləri:</p>
         <ul>
-          <li>Görüntünün yüksək səviyyədə detallaşdırılması,</li>
-          <li>Yüksək kontrastlıq səviyyəsi,</li>
-          <li>Yüksək kontrastlıq səviyyəsi,</li>
-          <li>Yüksək kontrastlıq səviyyəsi,</li>
+          {projectBenefits?.map((info) => (
+            <li>{info}</li>
+          ))}
         </ul>
         <p>
           Park Cinema-nın lazer zalında filmi ilk sən izlə, fərqi hiss et və

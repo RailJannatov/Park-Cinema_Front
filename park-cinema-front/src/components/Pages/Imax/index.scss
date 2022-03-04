@@ -1,4 +1,9 @@
 @import "../../../scss/index.scss";
+.hall-info {
+  img {
+    width: 100%;
+  }
+}
 .imax-title {
   @include title-style;
 }
@@ -65,5 +70,13 @@
   }
   .imax-hall-image {
     margin-bottom: $base * 4;
+  }
+}
+.imax-hall-section {
+  .carousel-root {
+    background: none;
+    .thumbs {
+      left: 0;
+    }
   }
 }

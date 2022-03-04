@@ -50,7 +50,7 @@ const Vip = () => {
                         setActive(2);
                       }}
                     >
-                      LaseR
+                      VIP Lounge
                     </TabUnstyled>
                   </TabsListUnstyled>
 

@@ -12,6 +12,7 @@ import Vip from "./components/Pages/VIP/Vip";
 import Campaigns from "./components/Pages/Campaigns/Campaigns";
 import AboutUs from "./components/Pages/AboutUs.js/AboutUs";
 import AdvertisingOffer from "./components/Pages/AdvertisingOffer/AdvertisingOffer";
+import Contact from "./components/Pages/Contact/Contact";
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
         <Route path="/campaigns" component={Campaigns} />
         <Route path="/aboutus" component={AboutUs} />
         <Route path="/advertisingoffer" component={AdvertisingOffer} />
+        <Route path="/contact" component={Contact} />
       </Switch>
       <Footer />
     </>

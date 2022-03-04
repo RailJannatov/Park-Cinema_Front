@@ -14,8 +14,7 @@ import BranchInfo from "./BranchInfo";
 import { hallAPI } from "../../../api/hallAPI";
 import BranchHalls from "./BranchHalls";
 import Order from "../../common/Order";
-import superDay from "../../../images/super-gun.png";
-import forStudents from "../../../images/imax-telebeler-ucun.png";
+import Offer from "../../common/Offer";
 
 const useStyles = makeStyles((theme) => ({
   active: {
@@ -110,7 +109,7 @@ const BranchDetail = () => {
             <TabPanelUnstyled value={3}></TabPanelUnstyled>
           </TabsUnstyled>
         </Row>
-        <Order />
+        <Offer />
       </Container>
     </>
   );

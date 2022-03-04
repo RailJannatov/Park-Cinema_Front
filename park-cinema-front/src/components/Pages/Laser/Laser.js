@@ -12,6 +12,7 @@ import Order from "../../common/Order";
 import superDay from "../../../images/super-gun.png";
 import forStudents from "../../../images/imax-telebeler-ucun.png";
 import LaseRDetail from "./LaseRDetail";
+import axios from "axios";
 const useStyles = makeStyles((theme) => ({
   active: {
     backgroundColor: "red",
@@ -24,9 +25,15 @@ const useStyles = makeStyles((theme) => ({
 function Laser() {
   const classes = useStyles();
   const [active, setActive] = React.useState(1);
+  const [laserInfo, setLaserInfo] = React.useState();
+  React.useEffect(() => {
+    axios
+      .get("https://localhost:44300/api/Laser/GetLaserInfo")
+      .then((res) => setLaserInfo(res.data));
+  }, []);
   return (
     <>
-      <LaserCover />
+      <LaserCover coverImage={laserInfo.coverImage} />
       <Container>
         <Row>
           <Col md={12}>
@@ -113,7 +120,7 @@ function Laser() {
                     </Col>
                   </TabPanelUnstyled>
                   <TabPanelUnstyled value={1}>
-                    <LaseRDetail />
+                    <LaseRDetail laserInfo={laserInfo} />
                   </TabPanelUnstyled>
                 </TabsUnstyled>
               </Col>

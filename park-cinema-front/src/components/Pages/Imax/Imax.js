@@ -10,12 +10,11 @@ import "./index.scss";
 import Order from "../../common/Order";
 import axios from "axios";
 import Movie from "../../common/Movie";
-import superDay from "../../../images/super-gun.png";
-import forStudents from "../../../images/imax-telebeler-ucun.png";
 import Advertisement from "../../layout/Advertisement/Advertisment";
 import ImaxTechnologie from "./ImaxTechnologie";
 import ImaxDetail from "./ImaxDetail";
 import Offer from "../../common/Offer";
+import { branchAPI } from "../../../api/branchAPI";
 
 const useStyles = makeStyles((theme) => ({
   active: {
@@ -29,6 +28,7 @@ const Imax = () => {
   const classes = useStyles();
   const [active, setActive] = React.useState(1);
   const [formatMovies, setFormatMovies] = React.useState();
+  const [hallDetail, setHallDetail] = React.useState();
 
   React.useEffect(() => {
     axios
@@ -36,10 +36,11 @@ const Imax = () => {
         params: { format: "imax" },
       })
       .then((res) => setFormatMovies(res.data));
+    branchAPI.getBranchDetail(4).then((res) => setHallDetail(res.data));
   }, []);
 
   return (
-    <div>
+    <>
       <ImaxCover />
       <Container>
         <Row>
@@ -130,7 +131,7 @@ const Imax = () => {
                     </div>
                     <Col md={4}>
                       {formatMovies?.map((movie) => (
-                        <Movie movie={movie} />
+                        <Movie movie={movie} key={movie.id} />
                       ))}
                     </Col>
                   </TabPanelUnstyled>
@@ -138,7 +139,7 @@ const Imax = () => {
                     <ImaxTechnologie />
                   </TabPanelUnstyled>
                   <TabPanelUnstyled value={2}>
-                    <ImaxDetail />
+                    <ImaxDetail detail={hallDetail} />
                   </TabPanelUnstyled>
                 </TabsUnstyled>
               </Col>
@@ -151,7 +152,7 @@ const Imax = () => {
           <Offer />
         </Row>
       </Container>
-    </div>
+    </>
   );
 };
 

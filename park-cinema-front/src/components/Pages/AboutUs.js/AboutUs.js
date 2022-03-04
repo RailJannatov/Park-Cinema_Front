@@ -14,6 +14,7 @@ import parkbulvarImage from "../../../images/Park-bulvar-tab1.jpg";
 import metroPark1 from "../../../images/Metro-park1.jpg";
 import imaxImage from "../../../images/imax-tab-1.jpg";
 import zaqulbaImage from "../../../images/zaqulba-tab-1.jpg";
+import axios from "axios";
 const useStyles = makeStyles((theme) => ({
   active: {
     backgroundColor: "red!important",
@@ -26,6 +27,13 @@ const useStyles = makeStyles((theme) => ({
 const AboutUs = () => {
   const classes = useStyles();
   const [active, setActive] = React.useState(1);
+  const [aboutUs, setAboutUs] = React.useState();
+  console.log(aboutUs);
+  React.useEffect(() => {
+    axios
+      .get("https://localhost:44300/api/AboutUs/GetAboutUsInfo")
+      .then((res) => setAboutUs(res.data));
+  }, []);
   return (
     <>
       <CinemaSlider />
@@ -33,12 +41,7 @@ const AboutUs = () => {
         <Row>
           <Col md={9} className="about-us">
             <h1 className="about-us-title">Haqqımızda</h1>
-            <div className="main-cinema-info">
-              Park Cinema - 4 meydançadan ibarət ən böyük nüfuzlu kinoteatrlar
-              şəbəkəsidir. Ən yüksək texniki tələblərə cavab verən kinoteatrlar
-              Park Bulvar, MetroPark, Park Zagulba AVM, Bakının yeni simvolu
-              Flame Towers-in yüksək səviyyəli ticarət mərkəzi.
-            </div>
+            <div className="main-cinema-info">{aboutUs?.mainDescription}</div>
             <div className="main-cinema-description">
               Əfsanəvi komfort və zalların keyfiyyətindən savayı, Park Cinema
               Azərbaycanda əzəmətli IMAX formatının yeganə nümayəndəsidir.

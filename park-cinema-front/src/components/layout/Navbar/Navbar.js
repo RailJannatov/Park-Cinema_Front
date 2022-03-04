@@ -18,7 +18,9 @@ const Navbar = () => {
         <Row>
           <Col md={2}>
             <div className="nav-logo">
-              <a href="/" className="nav-logo-link" />
+              <a href="/" className="nav-logo-link">
+                {" "}
+              </a>
             </div>
           </Col>
           <Col md={8} className="main-list">
@@ -61,13 +63,13 @@ const Navbar = () => {
                   <NavDropdown.Item href="/aboutus">
                     Park Cinema haqqında
                   </NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.3">
+                  <NavDropdown.Item href="/rules">
                     Qaydalar və şərtlər
                   </NavDropdown.Item>
                   <NavDropdown.Item href="/advertisingoffer">
                     Reklam təklifləri
                   </NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.5">Əlaqə</NavDropdown.Item>
+                  <NavDropdown.Item href="/contact">Əlaqə</NavDropdown.Item>
                 </NavDropdown>
               </li>
             </ul>
@@ -96,13 +98,17 @@ const Navbar = () => {
                   <a
                     href="https://apps.apple.com/us/app/park-cinema/id1119977600?ls=1"
                     className="ios-icon"
-                  />
+                  >
+                    {" "}
+                  </a>
                 </li>
                 <li className="social-item">
                   <a
                     href="https://play.google.com/store/apps/details?id=az.parkcinema.app&hl=ru"
                     className="android-icon"
-                  ></a>
+                  >
+                    {" "}
+                  </a>
                 </li>
               </ul>
             </div>
